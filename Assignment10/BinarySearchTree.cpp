@@ -91,6 +91,26 @@ BinaryNode<ItemType>* BinarySearchTree<ItemType>::randomAdd(BinaryNode<ItemType>
 }
 
 template<class ItemType>
+BinaryNode<ItemType>* BinarySearchTree<ItemType>::sortedAdd(BinaryNode<ItemType>* subTreePtr,
+	BinaryNode<ItemType>* newNodePtr)
+{
+	if (subTreePtr == nullptr)
+	{
+		return newNodePtr;
+	}
+	else if (subTreePtr->getItem() > newNodePtr->getItem())
+	{
+		BinaryNode<ItemType>* temp = sortedAdd(subTreePtr->getLeftChildPtr(), newNodePtr);
+		subTreePtr->setLeftChildPtr(tempPtr);
+	}
+	else
+	{
+		BinaryNode<ItemType>* temp = sortedAdd(subTreePtr->getRightChildPtr(), newNodePtr);
+		subTreePtr->setRightChildPtr(tempPtr);
+	}
+}
+
+template<class ItemType>
 BinaryNode<ItemType>* BinarySearchTree<ItemType>::moveValuesUpTree(BinaryNode<ItemType>* subTreePtr)
 {
 	BinaryNode<ItemType>* leftPtr = subTreePtr->getLeftChildPtr();
@@ -340,7 +360,7 @@ template<class ItemType>
 bool BinarySearchTree<ItemType>::add(const ItemType& newData)
 {
 	BinaryNode<ItemType>* newNodePtr = new BinaryNode<ItemType>(newData);
-	rootPtr = randomAdd(rootPtr, newNodePtr);
+	rootPtr = sortedAdd(rootPtr, newNodePtr);
 	return true;
 }  // end add
 

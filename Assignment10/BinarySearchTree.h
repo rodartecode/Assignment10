@@ -43,6 +43,11 @@ protected:
 	BinaryNode<ItemType>* randomAdd(BinaryNode<ItemType>* subTreePtr,
 		BinaryNode<ItemType>* newNodePtr);
 
+	// Recursively add a new node to the tree in its correctly sorted
+	// position.
+	BinaryNode<ItemType>* sortedAdd(BinaryNode<ItemType>* subTreePtr,
+		BinaryNode<ItemType>* newNodePtr);
+
 	// Removes the target value from the tree by calling moveValuesUpTree
 	// to overwrite value with value from child.
 	BinaryNode<ItemType>* removeValue(BinaryNode<ItemType>* subTreePtr,
