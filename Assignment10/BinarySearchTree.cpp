@@ -100,12 +100,12 @@ BinaryNode<ItemType>* BinarySearchTree<ItemType>::sortedAdd(BinaryNode<ItemType>
 	}
 	else if (subTreePtr->getItem() > newNodePtr->getItem())
 	{
-		BinaryNode<ItemType>* temp = sortedAdd(subTreePtr->getLeftChildPtr(), newNodePtr);
+		BinaryNode<ItemType>* tempPtr = sortedAdd(subTreePtr->getLeftChildPtr(), newNodePtr);
 		subTreePtr->setLeftChildPtr(tempPtr);
 	}
 	else
 	{
-		BinaryNode<ItemType>* temp = sortedAdd(subTreePtr->getRightChildPtr(), newNodePtr);
+		BinaryNode<ItemType>* tempPtr = sortedAdd(subTreePtr->getRightChildPtr(), newNodePtr);
 		subTreePtr->setRightChildPtr(tempPtr);
 	}
 }
@@ -421,3 +421,4 @@ template class BinaryNode<std::string>;
 template class BinaryNode<int>;
 template class BinarySearchTree<std::string>;
 template class BinarySearchTree<int>;
+template class BinarySearchTree<Person>
