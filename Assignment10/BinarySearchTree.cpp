@@ -7,6 +7,7 @@
 
 #include "BinarySearchTree.h"
 #include "BinaryNode.h"
+#include "Person.h"
 #include <iostream>
 #include <string>
 #include <algorithm>
@@ -421,4 +422,4 @@ template class BinaryNode<std::string>;
 template class BinaryNode<int>;
 template class BinarySearchTree<std::string>;
 template class BinarySearchTree<int>;
-template class BinarySearchTree<Person>
+template class BinarySearchTree<Person>;

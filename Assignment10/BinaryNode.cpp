@@ -6,6 +6,7 @@
 #include "stdafx.h"
 
 #include "BinaryNode.h"
+#include "Person.h"
 #include <cstddef>
 #include <string>
 
@@ -72,3 +73,4 @@ BinaryNode<ItemType>* BinaryNode<ItemType>::getRightChildPtr() const
    // (just strings and ints for now, add more types if desired)
 template class BinaryNode<std::string>;
 template class BinaryNode<int>;
+template class BinaryNode<Person>;
