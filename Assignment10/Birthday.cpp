@@ -76,8 +76,8 @@ void Birthday::setBirthday(int newMonth, int newDay, int newYear)
 	else
 		day = newDay;
 
-	if (newYear <= 1900)
-		year = 1900;
+	if (newYear <= 1)
+		year = 1;
 	else if (newYear >= 2018)
 		year = 2018;
 	else
