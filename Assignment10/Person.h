@@ -17,10 +17,12 @@ public:
 	Person(std::string newName, Birthday birthday);
 	Person(std::string newName, int newMonth, int newDay, int newYear);
 	Person(const Person &newPerson);
-
 	~Person();
 
+	std::string getName();
 	int getMonth();
+	std::string birthdayString();
+
 
 	bool operator==(const Person &right);
 	bool operator<(const Person &right);

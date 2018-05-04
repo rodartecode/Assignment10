@@ -31,9 +31,19 @@ Person::~Person()
 {
 }
 
+std::string Person::getName()
+{
+	return name;
+}
+
 int Person::getMonth()
 {
 	return bday.getMonth();
+}
+
+std::string Person::birthdayString()
+{
+	return bday.birthdayString();
 }
 
 bool Person::operator==(const Person &right)
